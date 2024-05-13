@@ -1,0 +1,4 @@
+sample text file
+tag 1 is mandatory tag
+tag 1 is for leagacy systems
+tag 1 are not to be missed
