@@ -27,7 +27,7 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
         run: |
-          git push https://github.com/nr/Gree-task.git HEAD:main
+          git push https://github.com/nroshan88/Greenbone-task.git HEAD:main
           # Use the PAT for authentication
           # Replace `YOUR_PAT_HERE` with the name of your secret
-          git push https://github.com/nr/Gree-task.git HEAD:main --quiet --set-upstream origin ${{ secrets.PAT }}
+          git push https://github.com/nroshan88/Greenbone-task.git HEAD:main --quiet --set-upstream origin ${{ secrets.PAT }}
