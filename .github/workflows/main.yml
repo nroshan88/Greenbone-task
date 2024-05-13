@@ -25,9 +25,7 @@ jobs:
         run: git commit -m "Replace 'tag 1' with 'tag 2'"
       - name: Push changes
         env:
-          PAT: ${{ secrets.PAT }}
+            GIT_SSH_COMMAND: 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ${{ secrets.PAT }}'
         run: |
-          git push https://github.com/nroshan88/Greenbone-task.git HEAD:main
-          # Use the PAT for authentication
-          # Replace `YOUR_PAT_HERE` with the name of your secret
-          git push https://github.com/nroshan88/Greenbone-task.git HEAD:main --quiet --set-upstream origin ${{ secrets.PAT }}
+          git push origin main
+
