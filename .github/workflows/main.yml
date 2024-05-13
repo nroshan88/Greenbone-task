@@ -1,0 +1,27 @@
+name: Main Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  replace-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Replace string in file
+        uses: MathieuSoysal/replace-string-in-file@v1.0.0
+        with:
+          file: sample-file.txt
+          old-string: "tag 1"
+          new-string: "tag 2"
+      - name: Set Git user
+        run: |
+          git config user.name "nroshan88"
+          git config user.email "nagishetty.roshan@gmail.com"
+      - name: Stage changes
+        run: git add sample-file.txt
+      - name: Commit changes
+        run: git commit -m "Replace 'tag 1' with 'tag 2'"
+      - name: Push changes
+        run: git push origin main
