@@ -14,10 +14,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/nroshan88/Greenbone-task:latest .
+        run: |
+            echo "build docker image"
+            docker build -t ghcr.io/nroshan88/Greenbone-task:latest .
 
       - name: Log in to GHCR
-        run: echo ${{ secrets.PAT }} | docker login ghcr.io -u nroshan88 --password-stdin
+        run: |
+            echo "login to ghcr"
+            echo ${{ secrets.PAT }} | docker login ghcr.io -u nroshan88 --password-stdin
 
       - name: Push Docker image
         run: docker push ghcr.io/nroshan88/Greenbone-task:latest 
