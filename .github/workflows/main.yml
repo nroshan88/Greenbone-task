@@ -25,5 +25,5 @@ jobs:
         run: git commit -m "Replace 'tag 1' with 'tag 2'"
       - name: Push changes
         env:
-          PAT_TOKEN: ${{ secrets.PAT }}
+          PAT: ${{ secrets.PAT }}
         run: git push origin main
