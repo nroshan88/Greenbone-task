@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use main workflow
-        uses: ./replace-tag.yml
+        uses: ./.github/workflows/replace-tag.yml
   build-and-push:
     runs-on: ubuntu-latest
     needs: use-reusable  # Specify the dependency on the "use-reusable" job
