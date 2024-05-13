@@ -15,6 +15,8 @@ jobs:
           file: sample-file.txt
           old-string: "tag 1"
           new-string: "tag 2"
+      - name: Pull latest changes
+        run: git pull origin main
       - name: Set Git user
         run: |
           git config user.name "nroshan88"
