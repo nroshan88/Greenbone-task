@@ -10,4 +10,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use main workflow
-        uses: ./
+        uses: ./main.yml
+  build-and-push:
+    runs-on: ubuntu-latest
+    needs: use-reusable  # Specify the dependency on the "replace-string" job
+    steps:
+      - name: Call build-push workflow
+        uses: ./build-push-docker.yml
