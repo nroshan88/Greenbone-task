@@ -1,0 +1,13 @@
+name: Reusable Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  use-reusable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use main workflow
+        uses: ./.github/workflows/main.yml
