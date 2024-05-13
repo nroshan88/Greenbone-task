@@ -10,13 +10,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use main workflow
-        uses: ./.github/workflows/replace-tag
+        uses: ./replace-tag
   build-and-push:
     runs-on: ubuntu-latest
     needs: use-reusable  
     steps:
       - name: Build and Push Docker Image
-        uses: ./.github/workflows/build-push-docker
+        uses: ./build-push-docker
 
 
 
