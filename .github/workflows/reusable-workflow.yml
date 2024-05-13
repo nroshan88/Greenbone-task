@@ -10,7 +10,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use main workflow
-        uses: ./.github/workflows/replace-tag.yml
+        run: |
+          # Use the workflow keyword to call the replace-tag workflow
+          workflow "Replace Tag Workflow" {
+            uses = "./.github/workflows/replace-tag.yml"
+          }
   use-build-and-push:
     runs-on: ubuntu-latest
     needs: use-replace-tag
@@ -18,7 +22,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use build-and-push workflow
-        uses: ./.github/workflows/build-push-docker.yml
+        run: |
+          # Use the workflow keyword to call the build-and-push workflow
+          workflow "Build and Push Workflow" {
+            uses = "./.github/workflows/build-push-docker.yml"
+          }
 
 
 
