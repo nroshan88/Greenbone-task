@@ -10,4 +10,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Use main workflow
-        uses: ./.github/workflows/main.yml
+        uses: ./
