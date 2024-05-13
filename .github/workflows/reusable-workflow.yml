@@ -9,16 +9,46 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Use main workflow
-        uses: ./.github/workflows/replace-tag.yml
+      - name: Replace string in file
+        uses: MathieuSoysal/replace-string-in-file@v1.0.0
+        with:
+          file: sample-file.txt
+          old-string: "tag 1"
+          new-string: "tag 2"
+      - name: Set Git user
+        run: |
+          git config user.name "nroshan88"
+          git config user.email "nagishetty.roshan@gmail.com"
+      - name: Stage changes
+        run: git add sample-file.txt
+      - name: Commit changes
+        run: git commit -m "Replace 'tag 1' with 'tag 2'"
+      - name: Push changes
+        run: |
+          #git push https://github.com/nroshan88/Greenbone-task.git HEAD:main
+          # Use the PAT for authentication
+          # Replace `YOUR_PAT_HERE` with the name of your secret
+          #git push https://github.com/nroshan88/Greenbone-task.git HEAD:main --quiet --set-upstream origin ${{ secrets.PAT }}
+          git push origin main
   use-build-and-push:
     runs-on: ubuntu-latest
     needs: use-replace-tag
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Use build-and-push workflow
-        uses: ./.github/workflows/build-push-docker.yml
+
+      - name: Build Docker image
+        run: |
+            echo "build docker image"
+            docker build -t ghcr.io/nroshan88/Greenbone-task:latest .
+
+      - name: Log in to GHCR
+        run: |
+            echo "login to ghcr"
+            echo ${{ secrets.PAT }} | docker login ghcr.io -u nroshan88 --password-stdin
+
+      - name: Push Docker image
+        run: docker push ghcr.io/nroshan88/Greenbone-task:latest
 
 
 
