@@ -1,5 +1,5 @@
 sample text file
-tag 2 is mandatory tag
-tag 2 is for leagacy systems
-tag 2 are not to be missed
-tag 2 are important
+tag 1 is mandatory tag
+tag 1 is for leagacy systems
+tag 1 are not to be missed
+tag 1 are important
