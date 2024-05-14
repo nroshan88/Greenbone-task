@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: modified-file
-          path: sample-file.txt
+          path: /usr/local/src/sample-modified-file.txt
       - name: Set Git user
         run: |
           git config user.name "nroshan88"
@@ -44,10 +44,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: modified-file
-          path: sample-modiefied-file.txt
+          path: /usr/local/src/sample-modiefied-file.txt
       - name: Update Dockerfile
         run: |
-          echo "COPY sample-modified-file.txt /usr/local/app/modified-file.txt" >> Dockerfile
+          echo "COPY /usr/local/src/sample-modiefied-file.txt /usr/local/app/modified-file.txt" >> Dockerfile
 
       - name: Build Docker image
         run: |
