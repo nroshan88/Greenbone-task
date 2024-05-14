@@ -54,7 +54,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          tags: ghcr.io/ ${{ secrets.repo_owner }}/greenbone-task:latest
+          tags: ghcr.io/nroshan88/greenbone-task:latest
 
 
       - name: Log in to GHCR
