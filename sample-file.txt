@@ -1,5 +1,4 @@
-sample text file
-tag 2 is mandatory tag
-tag 2 is for leagacy systems
-tag 2 are not to be missed
-tag 2 are important
+sample file
+In the documentation tag 1 are necassary
+In the documentation tag 1 represent legacy systems
+In the documentation tag 1 are to assigned for all resources
