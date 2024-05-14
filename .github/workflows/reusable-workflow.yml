@@ -22,8 +22,6 @@ jobs:
         with:
           name: modified-file
           path: sample-file.txt
-      - name: Pull latest changes
-        run: git pull origin main
       - name: Set Git user
         run: |
           git config user.name "nroshan88"
