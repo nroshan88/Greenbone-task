@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: modified-file
-          path: sample-modified-file.txt
+          path: sample-file.txt
       - name: Set Git user
         run: |
           git config user.name "nroshan88"
