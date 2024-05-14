@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: modified-file
-          path: modified-file.txt
+          path: sample-file.txt
       - name: Pull latest changes
         run: git pull origin main
       - name: Set Git user
@@ -46,10 +46,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: modified-file
-          path: modified-file.txt
+          path: sample-file.txt
       - name: Update Dockerfile
         run: |
-          echo "COPY modified-file.txt /usr/local/app/modified-file.txt" >> Dockerfile
+          echo "COPY sample-file.txt /usr/local/app/modified-file.txt" >> Dockerfile
 
       - name: Build Docker image
         run: |
