@@ -15,7 +15,11 @@ jobs:
           file: sample-file.txt
           old-string: "tag 1"
           new-string: "tag 2"
-
+      - name: Upload modified file
+        uses: actions/upload-artifact@v2
+        with:
+          name: modified-file
+          path: sample-file.txt
       - name: Stage changes
         uses: EndBug/add-and-commit@v7
         with:
