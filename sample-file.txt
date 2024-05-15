@@ -1,5 +1,5 @@
 sample file
-In the documentation tag 1 are necassary
-In the documentation tag 1 represent legacy systems
-In the documentation tag 1 are to assigned for all resources
-sample tag 1 tag 1
+In the documentation tag 2 are necassary
+In the documentation tag 2 represent legacy systems
+In the documentation tag 2 are to assigned for all resources
+sample tag 2 tag 2
